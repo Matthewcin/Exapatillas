@@ -1,0 +1,434 @@
+/* Importa la fuente Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1e1e1e;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    position: relative;
+    width: 100vw;
+    height: 75px;
+    background-color: rgba(0, 0, 0, .5);
+    border-bottom: 2px solid white;
+}
+
+.nav__izquierda {
+    position: absolute;
+    width: 25%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav__centro {
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    width: 45%;
+    height: 100%;
+    position: absolute;
+}
+
+.nav__derecha {
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    width: 25%;
+    height: 100%;
+}
+
+ul {
+    position: absolute;
+    right: 0;
+    width: 45%;
+    margin-right: 25%;
+    height: 100%;
+    display: flex;
+    padding-right: 5%;
+    justify-content: center;
+    gap: 65px;
+    align-items: center;
+    list-style: none;
+}
+
+li {
+    color: white;
+    font-size: 24px;
+    font-family: "Poppins", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #656161;
+}
+
+.disabled {
+    color: rgb(75, 75, 75);  
+}
+
+.enabled {
+    color: rgb(74, 74, 74);
+}
+
+.logo__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.btn__container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.nav-btn {
+    width: 42px;
+    height: 42px;
+}
+
+button {
+    background-color: rgba(0, 0, 0, 0);
+    border: 0px;
+}
+
+.menu_hamburguesa {
+    display: none;
+}
+
+.box__container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+    margin-top: 5%;
+    width: 100%;
+    height: 40vh;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    background-color: #000;
+    border-radius: 20px;
+    margin: 0 10px 0 10px;
+}
+
+.text_box {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 26px;
+    text-align: center;
+}
+
+.masculino {
+    transition: .6s ease-in-out;
+    border: 3px #222496 solid;
+    color: #898bff;
+    text-shadow: 0 0 10px #898bff, 0 0 20px #898bff, 0 0 30px #898bff, 0 0 40px #898bff, 0 0 70px #898bff, 0 0 80px #898bff, 0 0 100px #898bff, 0 0 150px #898bff;
+}
+
+.masculino:hover {
+    background-color: #222496;
+}
+
+.niño {
+    transition: .6s ease-in-out;
+    border: 3px #00ffff solid;
+    color: #00ffff;
+    text-shadow: 0 0 10px #898bff, 0 0 20px #898bff, 0 0 30px #898bff, 0 0 40px #898bff, 0 0 70px #898bff, 0 0 80px #898bff, 0 0 100px #898bff, 0 0 150px #898bff;
+}
+
+.niño:hover {
+    background-color: #2473a0;
+}
+
+.femenino {
+    transition: .6s ease-in-out;
+    border: 3px #af69cd solid;
+    color: rgb(233, 168, 253);
+    text-shadow: 0 0 10px #af69cd, 0 0 20px #af69cd, 0 0 30px #af69cd, 0 0 40px #af69cd, 0 0 70px #af69cd, 0 0 80px #af69cd, 0 0 100px #af69cd, 0 0 150px #af69cd;
+}
+
+.femenino:hover {
+    background-color: #582d6b;
+}
+
+.ofertas__container {
+    position: relative;
+    margin-top: 20px;
+}
+
+.preparate {
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    font-size: 24px;
+    text-align: center;
+}
+
+.descuento__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 5%;
+    width: 100%;
+    height: auto;
+}
+
+.descuento {
+    flex: 1 1 200px;
+    max-width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    margin: 10px;
+}
+
+.descuento img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.descuento:hover {
+    transform: scale(1.1);
+}
+
+footer {
+    margin-top: 1.5%;
+    width: 100vw;
+    height: 100px;
+    background-color: rgba(0, 0, 0, .5);
+    position: relative;
+
+}
+
+.createdby {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: white;
+}
+
+.texto_footer {
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+}
+
+@media (max-width: 2200px) {
+    .box {
+        width: 20%;
+    }
+
+    .descuento {
+        height: 140px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .box {
+        width: 30%;
+    }
+
+    .descuento {
+        height: 140px;
+    }
+}
+
+@media (max-width: 992px) {
+    .box {
+        width: 45%;
+    }
+
+    .descuento {
+        height: 110px;
+    }
+}
+
+@media (max-width: 768px) {
+    .box {
+        width: 90%;
+    }
+
+    .descuento {
+        height: 140px;
+    }
+}
+
+.menu_hamburguesa {
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+#menu-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: gray;
+}
+
+#menu-btn img {
+    width: 30px;
+    height: 30px;
+}
+
+.menu-telefono {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 100;
+    opacity: 0;
+}
+
+.menu-telefono.abrir {
+    display: flex;
+    opacity: 1;
+}
+
+.menu-telefono ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-telefono li {
+    width: 100%;
+    padding: 15px 0;
+}
+
+.menu-telefono a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+@media (max-width: 768px) {
+
+    .nav__centro,
+    .nav__derecha {
+        display: none;
+    }
+
+    .menu_hamburguesa {
+        display: block;
+    }
+}
+
+.menu-telefono-buttons {
+    position: absolute;
+    bottom: 50px;
+    display: flex;
+    gap: 20px;
+}
+
+@media (max-width: 480px) {
+    nav {
+        height: 60px;
+    }
+
+    ul {
+        margin-right: 15%;
+        gap: 30px;
+    }
+
+    li {
+        font-size: 18px;
+    }
+
+    .btn__container {
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .nav-btn {
+        width: 32px;
+        height: 32px;
+    }
+
+    .box__container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .box {
+        width: 80%;
+    }
+
+    .descuento__container {
+        flex-direction: column;
+    }
+
+    .descuento {
+        width: 80%;
+        max-width: none;
+        height: 100px;
+    }
+
+    .texto_footer {
+        font-size: 14px;
+    }
+
+    .nav__izquierda {
+        width: 30%;
+    }
+
+    .nav__centro {
+        width: 40%;
+    }
+
+    .btn__container {
+        justify-content: flex-start;
+        padding-left: 10px;
+    }
+
+    .logo__container {
+        justify-content: center;
+        width: 100%;
+    }
+}
