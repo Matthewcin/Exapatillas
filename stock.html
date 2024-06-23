@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/tabla.css">
+    <script src="js/lightswitch.js"></script>
+    <link rel="stylesheet" href="css/modo claro-oscuro.css">
+    <title>Exapatillas - Inicio</title>
+</head>
+
+<body id="fondo">
+    <header>
+        <nav class="nav__container">
+            <div class="nav__izquierda">
+                <div class="logo__container">
+                    <a href="index.html"><img id="logo" src="assets/logo-w.png" alt="Logo"></a>
+                </div>
+            </div>
+
+            <div class="nav__centro">
+                <ul>
+                    <a href="index.html">
+                    <li class="nav_element enabled home">Home</li>
+                    </a>
+                    <a href="contactanos.html">
+                        <li class="nav_element disabled contactanos">Contactanos</li>
+                    </a>
+                    <a href="index.html">
+                        <li class="nav_element disabled volver">Volver</li>
+                    </a>
+                </ul>
+            </div>
+
+            <div class="nav__derecha">
+                <div class="btn__container">
+                    <a href="https://instagram.com/exapatillas"><img class="nav-btn instagram"
+                            src="assets/instagram-w.png" alt="Instagram-Icon"></a>
+                    <button id="btn-sun"><img class="nav-btn sun" src="assets/sun-w.png" alt="Sun-Icon"></button>
+                    <button id="btn-moon"><img class="nav-btn moon" src="assets/moon-w.png" alt="Moon-Icon"></button>
+                </div>
+            </div>
+
+            <div class="menu_hamburguesa">
+                <button id="menu-btn">
+                    <svg id="list-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30">
+                        <rect x="3" y="5" width="18" height="2" fill="currentColor" />
+                        <rect x="3" y="11" width="18" height="2" fill="currentColor" />
+                        <rect x="3" y="17" width="18" height="2" fill="currentColor" />
+                    </svg>
+                </button>
+            </div>
+
+            <div id="menu-telefono" class="menu-telefono">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="contactanos.html">Contactanos</a></li>
+                    <li><a href="index.html">Volver</a></li>
+                    <li><a href="stock.html">Stock</a></li>
+                </ul>
+                <div class="menu-telefono-buttons">
+                    <a href="https://instagram.com/exapatillas"><img class="nav-btn instagram"
+                            src="assets/instagram-w.png" alt="Instagram-Icon"></a>
+                </div>
+            </div>
+            </div>
+        </nav>    
+        
+    </header>
+
+    <main>
+        
+        <div class="table__container">
+            <form id="formulario-agregar">
+                <input type="text" id="modelo" placeholder="Modelo de Zapatilla" required>
+                <input type="number" id="cantidad" placeholder="Cantidad" required>
+                <button type="submit">Agregar</button>
+            </form>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Modelo de Zapatilla</th>
+                        <th>Cantidad en Stock</th>
+                        <th>Modificar Item</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- api.js genera filas dinamicamente -->
+                </tbody>
+            </table>
+            <div class="paginacion">
+                <button id="paginaAnterior" disabled>Anterior</button>
+                <button id="paginaSiguiente">Siguiente</button>
+            </div>
+        </div>
+        <form id="formulario-filtro">
+            <input type="text" id="filtro-modelo" placeholder="Filtrar por modelo">
+            <button type="button" id="btn-filtrar">Filtrar</button>
+        </form>    
+    </main>
+    <script src="js/lightswitch.js"></script>
+    <script src="js/menu-hamburguesa.js"></script>
+    <script src="js/api.js"></script>
+</body>
+
+</html>

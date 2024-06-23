@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/modo claro-oscuro.css">
+    <title>Exapatillas - Inicio</title>
+</head>
+
+<body id="fondo">
+    <header>
+        <nav class="nav__container">
+            <div class="nav__izquierda">
+                <div class="logo__container">
+                    <a href="index.html"><img id="logo" src="assets/logo-w.png" alt="Logo"></a>
+                </div>
+            </div>
+
+            <div class="nav__centro">
+                <ul>
+                    <a href="index.html"><li class="nav_element enabled home"><a href="index.html">Home</li></a>
+                    <a href="contactanos.html">
+                        <li class="nav_element enabled contactanos">Contactanos</li>
+                    </a>
+                    <li class="nav_element disabled Stock"><a href="stock.html">Stock</a></li>
+                </ul>
+            </div>
+
+            <div class="nav__derecha">
+                <div class="btn__container">
+                    <a href="https://instagram.com/exapatillas"><img class="nav-btn instagram"
+                            src="assets/instagram-w.png" alt="Instagram-Icon"></a>
+                    <button id="btn-sun"><img class="nav-btn sun" src="assets/sun-w.png" alt="Sun-Icon"></button>
+                    <button id="btn-moon"><img class="nav-btn moon" src="assets/moon-w.png" alt="Moon-Icon"></button>
+                </div>
+            </div>
+
+            <div class="menu_hamburguesa">
+                <button id="menu-btn">
+                    <svg id="list-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30">
+                        <rect x="3" y="5" width="18" height="2" fill="currentColor" />
+                        <rect x="3" y="11" width="18" height="2" fill="currentColor" />
+                        <rect x="3" y="17" width="18" height="2" fill="currentColor" />
+                    </svg>
+                </button>
+            </div>
+
+            <div id="menu-telefono" class="menu-telefono">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="contactanos.html">Contactanos</a></li>
+                    <li><a href="index.html">Volver</a></li>
+                    <li><a href="stock.html">Stock</a></li>
+                </ul>
+                <div class="menu-telefono-buttons">
+                    <a href="https://instagram.com/exapatillas"><img class="nav-btn instagram"
+                            src="assets/instagram-w.png" alt="Instagram-Icon"></a>
+                </div>
+            </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <div class="box__container">
+            <div class="box masculino">
+                <a href="masculino.html">
+                    <h3 class="text_box">Calzado <span>Masculino</span></h3>
+                </a>
+            </div>
+            <div class="box niño">
+                <a href="niño.html">
+                    <h3 class="text_box">Calzado de <span>Niños</span></h3>
+                </a>
+            </div>
+            <div class="box femenino">
+                <a href="femenino.html">
+                    <h3 class="text_box">Calzado <span>Femenino</span></h3>
+                </a>
+            </div>
+        </div>
+
+        <div class="ofertas__container">
+
+            <h3 class="preparate">Prepárate!<br>Este mes tenemos rebajas increíbles en nuestras zapatillas serie SPORT
+            </h3>
+
+            <div class="descuento__container">
+
+                <div class="descuento b1">
+                    <a href="#"><img src="assets/zapatillas/1.png" alt="zapatilla 1"></a>
+                </div>
+
+                <div class="descuento b2">
+                    <a href="#"><img src="assets/zapatillas/2.png" alt="zapatilla 2"></a>
+                </div>
+
+                <div class="descuento b3">
+                    <a href="#"><img src="assets/zapatillas/3.png" alt="zapatilla 3"></a>
+                </div>
+
+                <div class="descuento b4">
+                    <a href="#"><img src="assets/zapatillas/4.png" alt="zapatilla 4"></a>
+                </div>
+
+            </div>
+
+            <div class="countdown">
+                <h3 class="preparate">Tiempo Restante de la Oferta: <br> <span class="dias"></span> <span
+                        class="horas"></span> <span class="minutos"></span> <span class="segundos"></span></h3>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="createdby">
+            <h3 class="texto_footer">Creado por: Planes Mateo y Thiago Ramos</h3>
+        </div>
+    </footer>
+    <script src="js/lightswitch.js"></script>
+    <script src="js/cuenta-regresiva.js"></script>
+    <script src="js/menu-hamburguesa.js"></script>
+</body>
+
+</html>
