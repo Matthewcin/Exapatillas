@@ -1,0 +1,312 @@
+* {
+  margin: 0;
+  /* Margen 0 a todos los elementos */
+  padding: 0;
+  /* Padding 0 a todos los elementos */
+  box-sizing: border-box;
+  /* Establece como se calcula el ancho y alto total de un elemento */
+}
+
+body {
+  background-color: #1e1e1e;
+  position: relative;
+}
+
+nav {
+  position: relative;
+  width: 100vw;
+  height: 75px;
+  background-color: rgba(0, 0, 0, .5);
+  border-bottom: 2px solid white;
+}
+
+.nav__izquierda {
+  position: absolute;
+  width: 25%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  /* Centra el contenido horizontalmente */
+  align-items: center;
+  /* Centra el contenido verticalmente */
+}
+
+.nav__centro {
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  width: 45%;
+  height: 100%;
+  position: absolute;
+}
+
+.nav__derecha {
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  width: 25%;
+  height: 100%;
+}
+
+ul {
+  position: absolute;
+  right: 0;
+  width: 45%;
+  margin-right: 25%;
+  height: 100%;
+  display: flex;
+  padding-right: 5%;
+  justify-content: center;
+  gap: 65px;
+  align-items: center;
+  list-style: none;
+}
+
+li {
+  color: white;
+  font-size: 24px;
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.disabled {
+  color: #7B7B7B;
+  /* "Deshabilito" la url para que el usuario sepa donde se encuentra */
+}
+
+.logo__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#logo {
+  max-height: 100%;
+  /* Altura maxima del logo */
+  max-width: 100%;
+  /* Ancho maximo para que no se estire el logo */
+}
+
+.btn__container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.nav-btn {
+  width: 42px;
+  height: 42px;
+}
+
+button {
+  background-color: rgba(0, 0, 0, 0);
+  border: 0px;
+}
+
+.menu_hamburguesa {
+  display: none;
+}
+
+.table__container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+form input, form button {
+  padding: 10px;
+  font-size: 16px;
+}
+
+form button {
+  background-color: #2d9331;
+  border-radius: 5px;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #45a049;
+}
+
+table {
+  border-collapse: collapse;
+  width: 80%;
+  margin-top: 20px;
+  background-color: #4e4b4b;
+}
+
+th,
+td {
+  border: 1px solid gray;
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  background-color: gray;
+}
+
+button.editar, button.borrar {
+  padding: 5px 10px;
+  margin: 2px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button.editar {
+  background-color: #aca5a5;
+  border-radius: 30px;
+  color: white;
+}
+
+button.borrar {
+  background-color: rgb(244, 55, 55);
+  border-radius: 5px;
+  color: white;
+}
+
+button.editar:hover {
+  background-color: #e59400;
+}
+
+button.borrar:hover {
+  background-color: #cc0000;
+}
+
+
+.createdby {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: white;
+}
+
+
+.menu_hamburguesa {
+  display: none;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+#menu-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: gray;
+}
+
+#menu-btn img {
+  width: 30px;
+  height: 30px;
+}
+
+.menu-telefono {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 100;
+  opacity: 0;
+}
+
+.menu-telefono.abrir {
+  display: flex;
+  opacity: 1;
+}
+
+.menu-telefono ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-telefono li {
+  width: 100%;
+  padding: 15px 0;
+}
+
+.menu-telefono a {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+.paginacion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.paginacion button {
+  color:#e59400;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.paginacion button:hover {
+  background-color: rgb(111, 111, 111);
+}
+
+.paginacion button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+
+@media (max-width: 768px) {
+  .nav__centro,
+  .nav__derecha {
+    display: none;
+  }
+
+  .menu_hamburguesa {
+    display: block;
+  }
+}
+
+.menu-telefono-buttons {
+  position: absolute;
+  bottom: 50px;
+  display: flex;
+  gap: 20px;
+}
+

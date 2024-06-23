@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1e1e1e;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    position: relative;
+    width: 100vw;
+    height: 75px;
+    background-color: rgba(0, 0, 0, .5);
+    border-bottom: 2px solid white;
+}
+
+.nav__izquierda,
+.nav__centro,
+.nav__derecha {
+    position: absolute;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav__izquierda {
+    width: 25%;
+}
+
+.nav__centro {
+    width: 45%;
+    left: 27.5%;
+}
+
+.nav__derecha {
+    width: 25%;
+    right: 0;
+}
+
+ul {
+    display: flex;
+    gap: 65px;
+    list-style: none;
+}
+
+li {
+    color: white;
+    font-size: 24px;
+    font-family: "Poppins", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.disabled {
+    color: #7B7B7B;
+}
+
+.logo__container,
+.btn__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo,
+.nav-btn {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+
+.btn__container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.nav-btn {
+    width: 42px;
+    height: 42px;
+}
+
+button {
+    background-color: rgba(0, 0, 0, 0);
+    border: 0px;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.productos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    width: 100%;
+    padding: 100px;
+}
+
+.producto {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: calc(22% - 20px);
+    border-radius: 30px 30px 0 30px;
+    background-color: #a8a8a8;
+    aspect-ratio: 1 / 1;
+    margin: 10px 0;
+    height: 250px;
+}
+
+.producto-foto {
+    position: relative;
+    margin-top: 5%;
+    border-radius: 15px 15px 0 0;
+    padding: 20px;
+    width: 95%;
+    height: 70%;
+    background-color: #151515;
+}
+
+.zapatilla {
+    width: 90%;
+    height: 100%;
+    position: absolute;
+    bottom: 0px;
+    background-size: cover;
+}
+
+.calzadoInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 40%;
+    bottom: 5%;
+}
+
+.calzadoInfo h3 {
+    font-family: "Quicksand", sans-serif;
+    font-size: 1.25em;
+    text-align: center;
+}
+
+footer {
+    width: 100%;
+    height: 100px;
+    background-color: rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.texto_footer {
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+}
+
+@media (max-width: 992px) {
+    .producto {
+        width: calc(33.333% - 20px);
+    }
+
+    .calzadoInfo h3 {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 768px) {
+    .producto {
+        width: calc(50% - 20px);
+    }
+
+    .calzadoInfo h3 {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 576px) {
+    .producto {
+        width: calc(100% - 20px);
+    }
+
+    .calzadoInfo h3 {
+        font-size: 0.8em;
+    }
+}
+
+.menu_hamburguesa {
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+#menu-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: gray;
+}
+
+#menu-btn img {
+    width: 30px;
+    height: 30px;
+}
+
+.menu-telefono {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 100;
+    opacity: 0;
+}
+
+.menu-telefono.abrir {
+    display: flex;
+    opacity: 1;
+}
+
+.menu-telefono ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-telefono li {
+    width: 100%;
+    padding: 15px 0;
+}
+
+.menu-telefono a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+
+@media (max-width: 768px) {
+
+    .nav__centro,
+    .nav__derecha {
+        display: none;
+    }
+
+    .menu_hamburguesa {
+        display: block;
+    }
+}
+
+.menu-telefono-buttons {
+    position: absolute;
+    bottom: 50px;
+}

@@ -1,0 +1,33 @@
+/* CAMBIO DE COLOR LIGHTSWITCH */
+.encendido {
+    background-color: white;
+    color: black;
+}
+
+.apagado {
+    background-color: #1E1E1E;
+    color: white;
+}
+
+.li_color_on {
+    color: white;
+}
+
+.li_color_off {
+    color: black;
+}
+
+.nav_off {
+    border-bottom: 2px solid black;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.box_off {
+    background-color: #00000023;
+}
+
+.box_on {
+    background-color: #d6d6d663;
+}
+
+/* -------------------------- */
