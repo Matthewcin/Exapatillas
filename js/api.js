@@ -1,26 +1,49 @@
 document.addEventListener("DOMContentLoaded", function() {
     const apiURL = 'https://6675b92ea8d2b4d072f137f2.mockapi.io/api/v1/stock/zapatillas';
+    let paginaActual = 1;
+    const limit = 10;
+    let dataCache = [];
 
-    function cargarTabla() {
-        fetch(apiURL)
-            .then(response => response.json())
-            .then(data => {
-                const tbody = document.querySelector('tbody');
-                tbody.innerHTML = '';
-                data.forEach(zapatilla => {
-                    const row = document.createElement('tr');
-                    row.innerHTML = `
-                        <td>${zapatilla.modelo}</td>
-                        <td>${zapatilla.cantidad}</td>
-                        <td>
-                            <button class="editar" data-id="${zapatilla.id}">Editar</button>
-                            <button class="borrar" data-id="${zapatilla.id}">Borrar</button>
-                        </td>
-                    `;
-                    tbody.appendChild(row);
-                });
-                agregarEventos();
-            });
+    function cargarTabla(page = 1) {
+        const url = new URL(apiURL);
+        url.searchParams.append('page', page);
+        url.searchParams.append('limit', limit);
+
+        fetch(url, {
+            method: 'GET',
+            headers: {'content-type':'application/json'}
+        })
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            }
+            throw new Error('Error en la carga de datos');
+        })
+        .then(data => {
+            dataCache = data; // Guardamos los datos en cache
+            mostrarTabla(data);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    }
+
+    function mostrarTabla(data) {
+        const tbody = document.querySelector('tbody');
+        tbody.innerHTML = '';
+        data.forEach(zapatilla => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${zapatilla.modelo}</td>
+                <td>${zapatilla.cantidad}</td>
+                <td>
+                    <button class="editar" data-id="${zapatilla.id}">Editar</button>
+                    <button class="borrar" data-id="${zapatilla.id}">Borrar</button>
+                </td>
+            `;
+            tbody.appendChild(row);
+        });
+        agregarEventos();
     }
 
     function agregarEventos() {
@@ -43,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function() {
         fetch(`${apiURL}/${id}`, {
             method: 'DELETE'
         }).then(() => {
-            cargarTabla();
+            cargarTabla(paginaActual);
         });
     }
 
@@ -58,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 },
                 body: JSON.stringify({ modelo: nuevoModelo, cantidad: nuevaCantidad })
             }).then(() => {
-                cargarTabla();
+                cargarTabla(paginaActual);
             });
         }
     }
@@ -74,11 +97,35 @@ document.addEventListener("DOMContentLoaded", function() {
             },
             body: JSON.stringify({ modelo, cantidad })
         }).then(() => {
-            cargarTabla();
+            cargarTabla(paginaActual);
             document.querySelector('#modelo').value = '';
             document.querySelector('#cantidad').value = '';
         });
     });
 
-    cargarTabla();
+    document.getElementById('paginaSiguiente').addEventListener('click', () => {
+        paginaActual++;
+        cargarTabla(paginaActual);
+        updateButtons();
+    });
+
+    document.getElementById('paginaAnterior').addEventListener('click', () => {
+        if (paginaActual > 1) {
+            paginaActual--;
+            cargarTabla(paginaActual);
+            updateButtons();
+        }
+    });
+
+    function updateButtons() {
+        document.getElementById('paginaAnterior').disabled = paginaActual === 1;
+    }
+
+    document.getElementById('btn-filtrar').addEventListener('click', () => {
+        const filtroModelo = document.getElementById('filtro-modelo').value.toLowerCase();
+        const datosFiltrados = dataCache.filter(zapatilla => zapatilla.modelo.toLowerCase().includes(filtroModelo));
+        mostrarTabla(datosFiltrados);
+    });
+
+    cargarTabla(paginaActual);
 });
